@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  book-catalog:
+    build:
+      context: ./book_catalog
+      dockerfile: Dockerfile
+    container_name: book_catalog    
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://raveelkashif_sit722_7_2p_user:trCgEFFTBDpcqghOWKT9u6nckb8NvBjH@db/raveelkashif_sit722_7_2p  
+      
+  inventory-management:
+    build:
+      context: ./inventory_management
+      dockerfile: Dockerfile
+    container_name: inventory_management  
+    ports:
+      - "8001:8001"
+    environment:
+      - DATABASE_URL=postgresql://raveelkashif_sit722_7_2p_user:trCgEFFTBDpcqghOWKT9u6nckb8NvBjH@db/raveelkashif_sit722_7_2p
+        
